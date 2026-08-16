@@ -61,7 +61,7 @@ function AdminDashboard({ user, onLogout }) {
           <div className="admin-logo"><i className="bi bi-code-slash"></i></div>
           <div>
             <h1>Project Manager</h1>
-            <p>Welcome back, <strong>{user?.username}</strong></p>
+            <p>Welcome back, <strong>{user}</strong></p>
           </div>
         </div>
 <div className="admin-header-actions">

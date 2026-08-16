@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 function About({ profile, loading }) {
   const bio = profile?.bio || "I'm a software engineering student passionate about building meaningful technology."
   const skills = profile?.skill_list || ['Python', 'Django', 'JavaScript', 'React', 'PostgreSQL']
@@ -5,14 +7,14 @@ function About({ profile, loading }) {
 
   return (
     <section className="about-section" id="about">
-      <div className="section-header">
+      <Reveal className="section-header">
         <span className="section-tag"><i className="bi bi-person-fill"></i> Who I Am</span>
         <h2 className="section-title">About <span className="glow-text">Me</span></h2>
         <p className="section-subtitle">Get to know the developer behind the code.</p>
-      </div>
+      </Reveal>
 
       <div className="about-grid">
-        <div className="about-card glass neon-border">
+        <Reveal className="about-card glass neon-border">
           <div className="about-avatar">
             {profile?.avatar_image ? (
               <img src={profile.avatar_image} alt={profile?.name} />
@@ -25,9 +27,9 @@ function About({ profile, loading }) {
           <h3 className="about-name">{profile?.name || 'Mwalish'}</h3>
           <p className="about-location"><i className="bi bi-geo-alt-fill"></i> {location}</p>
           <p className="about-bio">{bio}</p>
-        </div>
+        </Reveal>
 
-        <div className="about-info">
+        <Reveal className="about-info" delay={120}>
           <div className="about-text">
             <h3><i className="bi bi-lightning-charge-fill"></i> Full-Stack Development</h3>
             <p>
@@ -53,7 +55,7 @@ function About({ profile, loading }) {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

@@ -86,6 +86,34 @@ body::before {
   background: rgba(108, 99, 255, 0.5);
 }
 
+/* ===== SCROLL REVEAL (fade-in / slide-up on scroll) ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero loads immediately (above the fold) so it gets an on-mount
+   entrance instead of a scroll trigger. */
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-content > * {
+  animation: heroEnter 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-content > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-content > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.25s; }
+.hero-content > *:nth-child(4) { animation-delay: 0.35s; }
+.hero-content > *:nth-child(5) { animation-delay: 0.45s; }
+
 /* ===== SECTION HEADERS ===== */
 .section-title {
   font-size: 2.5rem;
