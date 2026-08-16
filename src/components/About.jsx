@@ -16,8 +16,8 @@ function About({ profile, loading }) {
       <div className="about-grid">
         <Reveal className="about-card glass neon-border">
           <div className="about-avatar">
-            {profile?.avatar_image ? (
-              <img src={profile.avatar_image} alt={profile?.name} />
+            {profile?.profile_image ? (
+              <img src={profile.profile_image} alt={profile?.name} />
             ) : profile?.avatar ? (
               <img src={profile.avatar} alt={profile?.name} />
             ) : (

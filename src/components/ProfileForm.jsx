@@ -35,7 +35,7 @@ function ProfileForm() {
           twitter: data.twitter || '',
           skills: data.skills || '',
         })
-        setAvatarPreview(data.avatar_image || data.avatar || '')
+        setAvatarPreview(data.profile_image || data.avatar || '')
       } catch (err) {
         setError('Could not load profile.')
       } finally {
@@ -67,10 +67,10 @@ function ProfileForm() {
       const formData = new FormData()
       Object.entries(form).forEach(([key, value]) => formData.append(key, value || ''))
       if (avatarFile) {
-        formData.append('avatar_image', avatarFile)
+        formData.append('profile_image', avatarFile)
       }
       const data = await updateProfile(formData)
-      setAvatarPreview(data.avatar_image || data.avatar || '')
+      setAvatarPreview(data.profile_image || data.avatar || '')
       setMessage('Profile updated successfully!')
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to update profile.')
